@@ -10,11 +10,7 @@ RUN pip install -qr /tmp/requirements.txt
 ADD ./webapp /opt/webapp/
 WORKDIR /opt/webapp
 
-RUN conda install numpy
-RUN conda install scipy
-RUN conda install scikit-learn
-RUN conda install pandas
-RUN conda install matplotlib
+RUN conda install numpy #scipy scikit-learn pandas matplotlib
 
 
 CMD waitress-serve --port=$PORT flaskapp:app
